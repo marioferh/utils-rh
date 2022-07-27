@@ -64,6 +64,16 @@ cmdline_idle_poll=+idle=poll
 
 More info about kernel boot parameters: https://www.kernel.org/doc/html/v4.14/admin-guide/kernel-parameters.html
 
+In addition to, for realTime hint following arguments are added to Tuned Configuration:
+```
+service.stalld=start,enable
+sched_rt_runtime_us=-1
+kernel.hung_task_timeout_secs=600
+kernel.nmi_watchdog=0
+kernel.sched_rt_runtime_us=-1
+vm.stat_interval=10
+```
+
 
 ## - Create profile with PPC
 A Performance Profile can be generated with PPC: 
@@ -77,7 +87,7 @@ Power-consumption-mode is the parameter related with workloadHints. There are th
 ```
 Default: cpu partitioning with enabled power management and the basic reduction of latency figures
 
-Low-latency: Adds some of real time behaviour
+Low-latency: Adds some of real time behavior
 
 Ultra-low-latency: disables power management to get the max possible determinism and lowest latency
 ```
@@ -86,7 +96,7 @@ Ultra-low-latency: disables power management to get the max possible determinism
 
 Now power consumption modes will work together with workload hints:
 low-latency -> enable real-time workload hint
-ultra-low-latency -> enable realtime and highPowerConsumtion hints
+ultra-low-latency -> enable realtime and highPowerConsumption hints
 
 ## - Applying hints
 
@@ -105,3 +115,6 @@ BOOT_IMAGE=(hd0,gpt3)/ostree/rhcos-72e12bd65d4a09b523e4624c7f82855ff2bda2e8458a9
 ## - Important
 
 Don't mix realTime Kernel parameter and realTimeHint
+
+## - Test Cases
+
