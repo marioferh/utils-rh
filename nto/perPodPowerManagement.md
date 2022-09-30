@@ -5,6 +5,14 @@ PPC: https://github.com/openshift/cluster-node-tuning-operator/pull/430
 
 Docs: 
 
+This feature works together with Crio annotations
+https://github.com/cri-o/cri-o/pull/5927
+https://github.com/openshift/cluster-node-tuning-operator/pull/383
+
+
+## - Notes
+HighPowerConsumption and PerPodPowerManagement hints cannot be both enabled.
+Thus, when creating performanceProfiles with PCC mode to enable perPodPowerManagement must be default or low-latency
 
 ## - API changes
 
