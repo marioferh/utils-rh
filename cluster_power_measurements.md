@@ -52,4 +52,11 @@ sudo perf stat -a -e "power/energy-cores/" -a -I 100
      0.401297705               0.11 Joules power/energy-cores/    
 ```
 
-For DELL cluster enter to BMC --> System --> Power
+```
+BMC:
+while sleep 10; do /opt/dell/srvadmin/bin/idracadm7 -r $SERVER  -u $USER -p $PASSWORD getsensorinfo | grep "System Board Pwr" | awk '{print $6}'; done
+384Watts
+384Watts                                  
+384Watts
+384Watts      
+```
