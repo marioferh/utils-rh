@@ -1,16 +1,15 @@
 WorkloadHints introduced in 4.11
-New API should make it easier to configure nodes for specific types of workloads 
+New API should make it easier to configure nodes for specific types of workloads
 
-Links: https://github.com/openshift/cluster-node-tuning-operator/pull/339
+Links: <https://github.com/openshift/cluster-node-tuning-operator/pull/339>
 
-Docs: https://github.com/openshift/openshift-docs/pull/46293
+Docs: <https://github.com/openshift/openshift-docs/pull/46293>
 
-
-## - API changes
+## API changes
 
 New field in performanceProfile.yaml
 
-```
+```go
 spec:
   workloadHints:
     realTime: true
@@ -20,25 +19,23 @@ spec:
     highPowerConsumption: false
 ```
 
-
-**API types:**
+### API type
 
 ```
 // WorkloadHints defines the set of upper level flags for different type of workloads.
 type WorkloadHints struct {
-	// HighPowerConsumption defines if the node should be configured in high power consumption mode.
-	// The flag will affect the power consumption but will improve the CPUs latency.
-	// +optional
-	HighPowerConsumption *bool `json:"highPowerConsumption,omitempty"`
-	// RealTime defines if the node should be configured for the real time workload.
-	// +default=true
-	// +optional
-	RealTime *bool `json:"realTime,omitempty"`
+    // HighPowerConsumption defines if the node should be configured in high power consumption mode.
+    // The flag will affect the power consumption but will improve the CPUs latency.
+    // +optional
+    HighPowerConsumption *bool `json:"highPowerConsumption,omitempty"`
+    // RealTime defines if the node should be configured for the real time workload.
+    // +default=true
+    // +optional
+    RealTime *bool `json:"realTime,omitempty"`
 }
 ```
 
-Keep in mind RealTime default=true
-
+Keep in mind RealTime `default=true`
 
 **tuned.conf:**
 
@@ -47,10 +44,10 @@ There are two WorkloadHints with following kernel arguments:
 
 realTime:
 ```
-cmdline_realtime=+nohz_full=${isolated_cores} tsc=nowatchdog nosoftlockup nmi_watchdog=0 
+cmdline_realtime=+nohz_full=${isolated_cores} tsc=nowatchdog nosoftlockup nmi_watchdog=0
 mce=off skew_tick=1
 ```
-    
+
 highPowerConsumption:
 ```
 cmdline_power_performance=+processor.max_cstate=1 intel_idle.max_cstate=0 intel_pstate=disable
@@ -76,10 +73,10 @@ vm.stat_interval=10
 
 
 ## - Create profile with PPC
-A Performance Profile can be generated with PPC: 
+A Performance Profile can be generated with PPC:
 
 ```
-podman run --entrypoint performance-profile-creator -v /must-gather:/must-gather:z registry.redhat.io/openshift4/performance-addon-rhel8-operator:v4.11 --mcp-name=worker-cnf --reserved-cpu-count=20 --rt-kernel=true --split-reserved-cpus-across-numa=false --topology-manager-policy=single-numa-node --must-gather-dir-path /must-gather  --power-consumption-mode=ultra-low-latency > my-performance-profile.yaml 
+podman run --entrypoint performance-profile-creator -v /must-gather:/must-gather:z registry.redhat.io/openshift4/performance-addon-rhel8-operator:v4.11 --mcp-name=worker-cnf --reserved-cpu-count=20 --rt-kernel=true --split-reserved-cpus-across-numa=false --topology-manager-policy=single-numa-node --must-gather-dir-path /must-gather  --power-consumption-mode=ultra-low-latency > my-performance-profile.yaml
 ```
 
 Power-consumption-mode is the parameter related with workloadHints. There are three modes:

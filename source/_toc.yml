@@ -1,0 +1,15 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: README
+- file: cluster_power_measurements
+- file: nto/README
+  sections:
+    - file: NTO
+    - file: PAO
+    - file: offlined_cpus
+    - file: workloadHints
+    - file: perPodPowerManagement
