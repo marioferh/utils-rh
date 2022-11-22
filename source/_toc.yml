@@ -4,12 +4,12 @@
 format: jb-book
 root: intro
 chapters:
-- file: README
-- file: cluster_power_measurements
-- file: nto/README
-  sections:
-    - file: NTO
-    - file: PAO
-    - file: offlined_cpus
-    - file: workloadHints
-    - file: perPodPowerManagement
+  - file: README
+  - file: cluster_power_measurements
+  - file: nto/README
+    sections:
+      - file: nto/NTO
+      - file: nto/PAO
+      - file: nto/offlined_cpus
+      - file: nto/workloadHints
+      - file: nto/perPodPowerManagement
