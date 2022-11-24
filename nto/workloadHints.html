@@ -1,0 +1,588 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>API changes &#8212; My sample book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="- Notes" href="perPodPowerManagement.html" />
+    <link rel="prev" title="Developent" href="offlined_cpus.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to utils-rh
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   utils-rh
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="README.html">
+   README
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="NTO.html">
+     NTO
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="PAO.html">
+     PAO deployment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="offlined_cpus.html">
+     Developent
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     API changes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="perPodPowerManagement.html">
+     - Notes
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnto/workloadHints.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/nto/workloadHints.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   API changes
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#api-type">
+     API type
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-profile-with-ppc">
+   - Create profile with PPC
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#applying-hints">
+   - Applying hints
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#important">
+   - Important
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#test-cases">
+   - Test Cases
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>API changes</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   API changes
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#api-type">
+     API type
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-profile-with-ppc">
+   - Create profile with PPC
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#applying-hints">
+   - Applying hints
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#important">
+   - Important
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#test-cases">
+   - Test Cases
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p>WorkloadHints introduced in 4.11
+New API should make it easier to configure nodes for specific types of workloads</p>
+<p>Links: <a class="reference external" href="https://github.com/openshift/cluster-node-tuning-operator/pull/339">https://github.com/openshift/cluster-node-tuning-operator/pull/339</a></p>
+<p>Docs: <a class="reference external" href="https://github.com/openshift/openshift-docs/pull/46293">https://github.com/openshift/openshift-docs/pull/46293</a></p>
+<section id="api-changes">
+<h1>API changes<a class="headerlink" href="#api-changes" title="Permalink to this headline">#</a></h1>
+<p>New field in performanceProfile.yaml</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="nx">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nx">workloadHints</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nx">realTime</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="o">...</span><span class="w"></span>
+<span class="nx">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nx">workloadHints</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nx">highPowerConsumption</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
+</pre></div>
+</div>
+<section id="api-type">
+<h2>API type<a class="headerlink" href="#api-type" title="Permalink to this headline">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// WorkloadHints defines the set of upper level flags for different type of workloads.
+type WorkloadHints struct {
+    // HighPowerConsumption defines if the node should be configured in high power consumption mode.
+    // The flag will affect the power consumption but will improve the CPUs latency.
+    // +optional
+    HighPowerConsumption *bool `json:&quot;highPowerConsumption,omitempty&quot;`
+    // RealTime defines if the node should be configured for the real time workload.
+    // +default=true
+    // +optional
+    RealTime *bool `json:&quot;realTime,omitempty&quot;`
+}
+</pre></div>
+</div>
+<p>Keep in mind RealTime <code class="docutils literal notranslate"><span class="pre">default=true</span></code></p>
+<p><strong>tuned.conf:</strong></p>
+<p>Tuned profile has a separate set of kernel arguments for each workload hint.
+There are two WorkloadHints with following kernel arguments:</p>
+<p>realTime:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cmdline_realtime=+nohz_full=${isolated_cores} tsc=nowatchdog nosoftlockup nmi_watchdog=0
+mce=off skew_tick=1
+</pre></div>
+</div>
+<p>highPowerConsumption:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmdline_power_performance</span><span class="o">=+</span><span class="n">processor</span><span class="o">.</span><span class="n">max_cstate</span><span class="o">=</span><span class="mi">1</span> <span class="n">intel_idle</span><span class="o">.</span><span class="n">max_cstate</span><span class="o">=</span><span class="mi">0</span> <span class="n">intel_pstate</span><span class="o">=</span><span class="n">disable</span>
+</pre></div>
+</div>
+<p>highPowerConsumption &amp; realTime:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmdline_idle_poll</span><span class="o">=+</span><span class="n">idle</span><span class="o">=</span><span class="n">poll</span>
+</pre></div>
+</div>
+<p>More info about kernel boot parameters: <a class="reference external" href="https://www.kernel.org/doc/html/v4.14/admin-guide/kernel-parameters.html">https://www.kernel.org/doc/html/v4.14/admin-guide/kernel-parameters.html</a></p>
+<p>In addition to, for realTime hint following arguments are added to Tuned Configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">service</span><span class="o">.</span><span class="n">stalld</span><span class="o">=</span><span class="n">start</span><span class="p">,</span><span class="n">enable</span>
+<span class="n">sched_rt_runtime_us</span><span class="o">=-</span><span class="mi">1</span>
+<span class="n">kernel</span><span class="o">.</span><span class="n">hung_task_timeout_secs</span><span class="o">=</span><span class="mi">600</span>
+<span class="n">kernel</span><span class="o">.</span><span class="n">nmi_watchdog</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">kernel</span><span class="o">.</span><span class="n">sched_rt_runtime_us</span><span class="o">=-</span><span class="mi">1</span>
+<span class="n">vm</span><span class="o">.</span><span class="n">stat_interval</span><span class="o">=</span><span class="mi">10</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="create-profile-with-ppc">
+<h1>- Create profile with PPC<a class="headerlink" href="#create-profile-with-ppc" title="Permalink to this headline">#</a></h1>
+<p>A Performance Profile can be generated with PPC:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">podman</span> <span class="n">run</span> <span class="o">--</span><span class="n">entrypoint</span> <span class="n">performance</span><span class="o">-</span><span class="n">profile</span><span class="o">-</span><span class="n">creator</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">must</span><span class="o">-</span><span class="n">gather</span><span class="p">:</span><span class="o">/</span><span class="n">must</span><span class="o">-</span><span class="n">gather</span><span class="p">:</span><span class="n">z</span> <span class="n">registry</span><span class="o">.</span><span class="n">redhat</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">openshift4</span><span class="o">/</span><span class="n">performance</span><span class="o">-</span><span class="n">addon</span><span class="o">-</span><span class="n">rhel8</span><span class="o">-</span><span class="n">operator</span><span class="p">:</span><span class="n">v4</span><span class="mf">.11</span> <span class="o">--</span><span class="n">mcp</span><span class="o">-</span><span class="n">name</span><span class="o">=</span><span class="n">worker</span><span class="o">-</span><span class="n">cnf</span> <span class="o">--</span><span class="n">reserved</span><span class="o">-</span><span class="n">cpu</span><span class="o">-</span><span class="n">count</span><span class="o">=</span><span class="mi">20</span> <span class="o">--</span><span class="n">rt</span><span class="o">-</span><span class="n">kernel</span><span class="o">=</span><span class="n">true</span> <span class="o">--</span><span class="n">split</span><span class="o">-</span><span class="n">reserved</span><span class="o">-</span><span class="n">cpus</span><span class="o">-</span><span class="n">across</span><span class="o">-</span><span class="n">numa</span><span class="o">=</span><span class="n">false</span> <span class="o">--</span><span class="n">topology</span><span class="o">-</span><span class="n">manager</span><span class="o">-</span><span class="n">policy</span><span class="o">=</span><span class="n">single</span><span class="o">-</span><span class="n">numa</span><span class="o">-</span><span class="n">node</span> <span class="o">--</span><span class="n">must</span><span class="o">-</span><span class="n">gather</span><span class="o">-</span><span class="nb">dir</span><span class="o">-</span><span class="n">path</span> <span class="o">/</span><span class="n">must</span><span class="o">-</span><span class="n">gather</span>  <span class="o">--</span><span class="n">power</span><span class="o">-</span><span class="n">consumption</span><span class="o">-</span><span class="n">mode</span><span class="o">=</span><span class="n">ultra</span><span class="o">-</span><span class="n">low</span><span class="o">-</span><span class="n">latency</span> <span class="o">&gt;</span> <span class="n">my</span><span class="o">-</span><span class="n">performance</span><span class="o">-</span><span class="n">profile</span><span class="o">.</span><span class="n">yaml</span>
+</pre></div>
+</div>
+<p>Power-consumption-mode is the parameter related with workloadHints. There are three modes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span><span class="p">:</span> <span class="n">cpu</span> <span class="n">partitioning</span> <span class="k">with</span> <span class="n">enabled</span> <span class="n">power</span> <span class="n">management</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">basic</span> <span class="n">reduction</span> <span class="n">of</span> <span class="n">latency</span> <span class="n">figures</span>
+
+<span class="n">Low</span><span class="o">-</span><span class="n">latency</span><span class="p">:</span> <span class="n">Adds</span> <span class="n">some</span> <span class="n">of</span> <span class="n">real</span> <span class="n">time</span> <span class="n">behavior</span>
+
+<span class="n">Ultra</span><span class="o">-</span><span class="n">low</span><span class="o">-</span><span class="n">latency</span><span class="p">:</span> <span class="n">disables</span> <span class="n">power</span> <span class="n">management</span> <span class="n">to</span> <span class="n">get</span> <span class="n">the</span> <span class="nb">max</span> <span class="n">possible</span> <span class="n">determinism</span> <span class="ow">and</span> <span class="n">lowest</span> <span class="n">latency</span>
+</pre></div>
+</div>
+<p>Now power consumption modes will work together with workload hints:
+low-latency -&gt; enable real-time workload hint
+ultra-low-latency -&gt; enable realtime and highPowerConsumption hints</p>
+</section>
+<section id="applying-hints">
+<h1>- Applying hints<a class="headerlink" href="#applying-hints" title="Permalink to this headline">#</a></h1>
+<p>Apply performanceProfile with selected Workload Hints (as previous example)
+Tuned config is created from performanceProfile
+Tuned config is applied after reboot.
+Check in the node that arguments has been applied correctly, in cmdline or just check if correct tuned config has been applied</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sh</span><span class="o">-</span><span class="mf">4.4</span><span class="c1"># cat /proc/cmdline</span>
+<span class="n">BOOT_IMAGE</span><span class="o">=</span><span class="p">(</span><span class="n">hd0</span><span class="p">,</span><span class="n">gpt3</span><span class="p">)</span><span class="o">/</span><span class="n">ostree</span><span class="o">/</span><span class="n">rhcos</span><span class="o">-</span><span class="mf">72e12</span><span class="n">bd65d4a09b523e4624c7f82855ff2bda2e8458a9880ff1409b544855723</span><span class="o">/</span><span class="n">vmlinuz</span><span class="o">-</span><span class="mf">4.18.0</span><span class="o">-</span><span class="mf">372.9.1</span><span class="o">.</span><span class="n">el8</span><span class="o">.</span><span class="n">x86_64</span> <span class="n">random</span><span class="o">.</span><span class="n">trust_cpu</span><span class="o">=</span><span class="n">on</span> <span class="n">console</span><span class="o">=</span><span class="n">tty0</span> <span class="n">console</span><span class="o">=</span><span class="n">ttyS0</span><span class="p">,</span><span class="mi">115200</span><span class="n">n8</span> <span class="n">ostree</span><span class="o">=/</span><span class="n">ostree</span><span class="o">/</span><span class="n">boot</span><span class="mf">.0</span><span class="o">/</span><span class="n">rhcos</span><span class="o">/</span><span class="mf">72e12</span><span class="n">bd65d4a09b523e4624c7f82855ff2bda2e8458a9880ff1409b544855723</span><span class="o">/</span><span class="mi">0</span> <span class="n">ignition</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">id</span><span class="o">=</span><span class="n">gcp</span> <span class="n">root</span><span class="o">=</span><span class="n">UUID</span><span class="o">=</span><span class="mi">71</span><span class="n">a9905c</span><span class="o">-</span><span class="mi">7649</span><span class="o">-</span><span class="mi">4043</span><span class="o">-</span><span class="mi">9840</span><span class="o">-</span><span class="n">a6b7a448912d</span> <span class="n">rw</span> <span class="n">rootflags</span><span class="o">=</span><span class="n">prjquota</span> <span class="n">boot</span><span class="o">=</span><span class="n">UUID</span><span class="o">=</span><span class="mi">63</span><span class="n">de4183</span><span class="o">-</span><span class="mi">89</span><span class="n">a6</span><span class="o">-</span><span class="mi">4</span><span class="n">cbe</span><span class="o">-</span><span class="n">aebf</span><span class="o">-</span><span class="mi">55</span><span class="n">fbf12ac118</span> <span class="n">skew_tick</span><span class="o">=</span><span class="mi">1</span> <span class="n">nohz</span><span class="o">=</span><span class="n">on</span> <span class="n">rcu_nocbs</span><span class="o">=</span><span class="mi">1</span> <span class="n">tuned</span><span class="o">.</span><span class="n">non_isolcpus</span><span class="o">=</span><span class="mi">00000001</span> <span class="n">systemd</span><span class="o">.</span><span class="n">cpu_affinity</span><span class="o">=</span><span class="mi">0</span> <span class="n">intel_iommu</span><span class="o">=</span><span class="n">on</span> <span class="n">iommu</span><span class="o">=</span><span class="n">pt</span> <span class="n">isolcpus</span><span class="o">=</span><span class="n">managed_irq</span><span class="p">,</span><span class="mi">1</span> <span class="n">nohz_full</span><span class="o">=</span><span class="mi">1</span> <span class="n">tsc</span><span class="o">=</span><span class="n">nowatchdog</span> <span class="n">nosoftlockup</span> <span class="n">nmi_watchdog</span><span class="o">=</span><span class="mi">0</span> <span class="n">mce</span><span class="o">=</span><span class="n">off</span> <span class="n">skew_tick</span><span class="o">=</span><span class="mi">1</span> <span class="n">processor</span><span class="o">.</span><span class="n">max_cstate</span><span class="o">=</span><span class="mi">1</span> <span class="n">intel_idle</span><span class="o">.</span><span class="n">max_cstate</span><span class="o">=</span><span class="mi">0</span> <span class="n">intel_pstate</span><span class="o">=</span><span class="n">disable</span> <span class="n">idle</span><span class="o">=</span><span class="n">poll</span> <span class="n">default_hugepagesz</span><span class="o">=</span><span class="mi">1</span><span class="n">G</span> <span class="n">hugepagesz</span><span class="o">=</span><span class="mi">2</span><span class="n">M</span> <span class="n">hugepages</span><span class="o">=</span><span class="mi">128</span> <span class="o">+</span>
+
+</pre></div>
+</div>
+</section>
+<section id="important">
+<h1>- Important<a class="headerlink" href="#important" title="Permalink to this headline">#</a></h1>
+<p>Don’t mix realTime Kernel parameter and realTimeHint</p>
+</section>
+<section id="test-cases">
+<h1>- Test Cases<a class="headerlink" href="#test-cases" title="Permalink to this headline">#</a></h1>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nto"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="offlined_cpus.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Developent</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="perPodPowerManagement.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">- Notes</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
